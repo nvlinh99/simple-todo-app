@@ -2,27 +2,29 @@ extends ../layouts/header
 
 block content
   if !user
-    .alert.alert-danger Bạn chưa đăng nhập &nbsp;
-      a.btn.btn-primary(href='/auth/login') Login
+    .px-5
+      .alert.alert-danger Bạn chưa đăng nhập &nbsp;
+        a.btn.btn-primary(href='/auth/login') Login
   else
-      h1.mt-5.pt-5.text-center Thông tin cá nhân
-      table.table
-        tr
-          th Avatar
-          th Name
-          th Username
-          th Email
+      .px-5
+        h1.mt-5.pt-5.text-center Thông tin cá nhân
+        table.table
           tr
-            td
-              img(src=user.avatar, width="64")
-            td= user.displayName
-            td= user.username
-            td= user.email
-      
-      h1 Cập nhật ảnh đại diện
-      form(method="post", enctype="multipart/form-data")
-        .form-group
-          input#avatar.form-control-file(name="avatar", type="file")
+            th Avatar
+            th Name
+            th Username
+            th Email
+            tr
+              td
+                img(src=user.avatar, width="64")
+              td= user.displayName
+              td= user.username
+              td= user.email
+        
+        h1 Cập nhật ảnh đại diện
+        form(method="post", enctype="multipart/form-data")
+          .form-group
+            input#avatar.form-control-file(name="avatar", type="file")
 
-        button.btn.btn-primary Update
+          button.btn.btn-primary Update
         

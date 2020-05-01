@@ -1,21 +1,22 @@
 extends ./layouts/header
 
 block content
-    h1.text-center BTCN04 - 1760096 - Nguyễn Vũ Linh
-    p
-    .card
-        img.card-img-top(src="/images/1.png", width='100px', alt="NodeJSxExpress")
-        .card-body.text-center
-            h5.card-title Công cụ giúp bạn quản lý công việc - Todo App
-            p.card-text
-                if !user
-                    a.btn.btn-outline-primary(href='/auth/login') Dùng ngay 
-                else
-                    a.btn.btn-outline-primary(href='/todo') Dùng ngay 
-            p.card-text
-            small.text-muted Last updated 3 mins ago
-    br
-    blockquote.blockquote.text-center
-        p.mb-0 "Stay hungry, stay foolish"
-        footer.blockquote-footer Steve Jobs &nbsp;
-            cite() - CEO Apple Inc.
+    .px-5
+        h1.text-center BTCN04 - 1760096 - Nguyễn Vũ Linh
+        p
+        .card
+            img.card-img-top(src="/images/1.png", width='100px', alt="NodeJSxExpress")
+            .card-body.text-center
+                h5.card-title Công cụ giúp bạn quản lý công việc - Todo App
+                p.card-text
+                    if !user
+                        a.btn.btn-outline-primary(href='/auth/login') Dùng ngay 
+                    else
+                        a.btn.btn-outline-primary(href='/todo') Dùng ngay 
+                p.card-text
+                small.text-muted Last updated 3 mins ago
+        br
+        blockquote.blockquote.text-center
+            p.mb-0 "Stay hungry, stay foolish"
+            footer.blockquote-footer Steve Jobs &nbsp;
+                cite() - CEO Apple Inc.
