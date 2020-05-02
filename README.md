@@ -1,4 +1,4 @@
-# Simple To do App with Express x Bootstrap
+# Simple To do App (No database) with Express x Bootstrap
 ![Thumbnail](https://i.imgur.com/dJbcwV2.png)
 
 ## Demo
