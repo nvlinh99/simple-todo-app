@@ -1,22 +1,28 @@
 extends ./layouts/header
 
 block content
-    .px-5
-        h1.text-center BTCN04 - 1760096 - Nguyễn Vũ Linh
-        p
-        .card
-            img.card-img-top(src="/images/1.png", width='100px', alt="NodeJSxExpress")
+    .homepage
+        .cover
+            .profile
+                if user
+                    img.avatar(src=user.avatar, alt='@nvlinh99')
+                else
+                    img.avatar(src='/images/avatar.jpg', alt='@nvlinh99')
+            .social
+                blockquote.blockquote.text-center
+                    p.mb-0 "Stay hungry, stay foolish"
+                    footer.blockquote-footer Steve Jobs &nbsp;
+                        cite() - CEO Apple Inc.
+                a(href='http://facebook.com/nvlinh99', target='_blank')
+                    img.button.facebook(src='http://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_six-128.png', alt='Facebook')
+                a(href='http://twitter.com/nvlinh99', target='_blank')
+                    img.button.twitter(src='http://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_six-128.png', alt='Twitter')
+                a(href='http://github.com/nvlinh99', target='_blank')
+                    img.button.github(src='http://cdn3.iconfinder.com/data/icons/free-social-icons/67/github_six_gray-128.png', alt='GitHub')
             .card-body.text-center
-                h5.card-title Công cụ giúp bạn quản lý công việc - Todo App
+                h3.card-title Công cụ giúp bạn quản lý công việc - Todo App
                 p.card-text
                     if !user
                         a.btn.btn-outline-primary(href='/auth/login') Dùng ngay 
                     else
                         a.btn.btn-outline-primary(href='/todo') Dùng ngay 
-                p.card-text
-                small.text-muted Last updated 3 mins ago
-        br
-        blockquote.blockquote.text-center
-            p.mb-0 "Stay hungry, stay foolish"
-            footer.blockquote-footer Steve Jobs &nbsp;
-                cite() - CEO Apple Inc.

@@ -6,25 +6,33 @@ block content
       .alert.alert-danger Bạn chưa đăng nhập &nbsp;
         a.btn.btn-primary(href='/auth/login') Login
   else
-      .px-5
-        h1.mt-5.pt-5.text-center Thông tin cá nhân
-        table.table
-          tr
-            th Avatar
-            th Name
-            th Username
-            th Email
-            tr
-              td
-                img(src=user.avatar, width="64")
-              td= user.displayName
-              td= user.username
-              td= user.email
-        
-        h1 Cập nhật ảnh đại diện
-        form(method="post", enctype="multipart/form-data")
-          .form-group
-            input#avatar.form-control-file(name="avatar", type="file")
-
-          button.btn.btn-primary Update
-        
+    .info
+      .row.justify-content-center
+        .col-sm-6.col-md-offset-2.col-md-4
+          .info-card
+            img(style='width: 100%', src=src=user.avatar)
+            .info-card-details.animate
+              .info-card-header
+                h1= user.displayName 
+                h3  @nvlinh99 
+              .info-card-detail
+                table.table
+                  tr
+                    td Name
+                    td= user.displayName
+                  tr
+                    th Username
+                    td= user.username
+                  tr
+                    th Email
+                    td= user.email
+                h4.pt-4 Cập nhật ảnh đại diện
+                hr
+                form(method="post", enctype="multipart/form-data")
+                  .form-group
+                    .upload-btn-wrapper
+                      button.btn-upload Choose a file
+                      input#avatar.form-control-file.inputs(type='file', name='avatar')
+                    //- input#avatar.form-control-file.inputs(name="avatar", type="file")
+                  
+                  button.btn.btn-block.btn-primary Update        

@@ -7,7 +7,7 @@ html
     body
         if user
             nav.navbar.navbar-expand-lg.navbar-light.bg-light.justify-content-between
-                a.navbar-brand(href='#') LING
+                img(src="/images/logo.png", alt="", width="32")
                 button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #navbarSupportedContent.collapse.navbar-collapse
@@ -16,7 +16,7 @@ html
                         li.nav-item
                             a.nav-link(href='/') Home
                         li.nav-item
-                            a.nav-link(href='/user') Trang cá nhân
+                            a.nav-link(href='/user') Profile
                         li.nav-item
                             a.nav-link(href='/todo') To do
                     b Hi, 
@@ -41,13 +41,26 @@ html
                 .alert.alert-danger Bạn chưa đăng nhập &nbsp;
                 a.btn.btn-primary(href='/auth/login') Login
             else
-                h1 Quản lý ToDo
-                    section#section-add
-                        form
-                            .form-group
-                                input#newTodo.form-control(type='text', name='todo')
-                            
-                            button.btn.btn-primary(onclick='event.preventDefault(); onAddClick();') Add
-                    section#section-list
-                        ul#todo-list
-            script(src='/js/todo.js')
+            .row.mt-3
+                .col-md-6
+                    .todolist.not-done
+                        form(action='/todo/add', method='POST') 
+                            h1 Todos
+                                input.form-control.add-todo(type='text', name='newTask', placeholder='Add todo')
+                            button.btn.btn-success Add task
+
+                            ul#sortable.list-unstyled
+                            each atask in task
+                                li.ui-state-default
+                                    .checkbox
+                                        input(type='checkbox', name='check', value= atask)
+                                        |  #{atask}           
+                            button#top.btn.btn-danger.mt-5(formaction='/todo/remove', type='submit')  Remove            
+                .col-md-6
+                    .todolist
+                        h1 Already Done
+                        ul#done-items.list-unstyled
+                        each cpl in complete
+                            li
+                                input(type='checkbox' checked)
+                                |  #{cpl}   

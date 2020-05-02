@@ -1,18 +1,32 @@
 extends ../layouts/header
 
 block content
-  if errors
-    each error in errors
-      .px-5.mt-5
-        .alert.alert-danger= error
-  .px-5
-    h1 Login  
-    form(action="/auth/login", method="post")
-      .form-group
-        label(for="username") Username
-        input#username.form-control(name='username', type="text", value=values ? values.username : '')
-      .form-group
-        label(for="password") Password
-        input#password.form-control(name='password', type="password", value=values ? values.password: '')
-
-      button.btn.btn-primary Login
+  .login-box
+    .row.justify-content-center
+      aside.col-sm-4
+        .card
+          article.card-body
+            a.float-right.btn.btn-outline-primary(href='#') Sign up
+            h4.card-title.mb-4.mt-1 Sign in
+            p
+              if errors
+                each error in errors
+                    .alert.alert-danger= error
+              a.btn.btn-block.btn-outline-info(href='#')
+                i.fab.fa-twitter
+                |  &nbsp; Login via Twitter
+              a.btn.btn-block.btn-outline-primary(href='#')
+                i.fab.fa-facebook-f
+                |  &nbsp; Login via facebook
+            hr
+            form(action="/auth/login", method="post")
+              .form-group
+                input#username.form-control(name='username', type="text", placeholder='Username', value=values ? values.username : '')
+              .form-group
+                input#password.form-control(name='password', type="password", placeholder='********',value=values ? values.password: '')
+              .row
+                .col-md-6
+                  .form-group
+                    button.btn.btn-block.btn-primary(type='submit')  Login  
+                .col-md-6.text-right
+                  a.small(href='#') Forgot password?

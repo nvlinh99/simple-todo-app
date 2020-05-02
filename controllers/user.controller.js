@@ -4,7 +4,7 @@ module.exports.index = function(req, res) {
     const userId = req.session.userId;
     const user = controller.findUserById(userId);
     if(!userId){
-        res.redirect('/');
+        res.redirect('/auth/login');
       }
     res.render('users/index', {title: 'Thông tin cá nhân', user});
 };
