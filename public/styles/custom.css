@@ -2,10 +2,6 @@ body{
     background-color:#f8f9fa;;
 }
 
-nav {
-    padding: 0 -10px;
-}
-
 .upload-btn-wrapper {
     position: relative;
     overflow: hidden;

@@ -31,8 +31,9 @@ block content
                 form(method="post", enctype="multipart/form-data")
                   .form-group
                     .upload-btn-wrapper
-                      button.btn-upload Choose a file
+                      button.btn-upload
+                        i.fas.fa-image
+                        | &nbsp;Choose a file
                       input#avatar.form-control-file.inputs(type='file', name='avatar')
-                    //- input#avatar.form-control-file.inputs(name="avatar", type="file")
                   
                   button.btn.btn-block.btn-primary Update        

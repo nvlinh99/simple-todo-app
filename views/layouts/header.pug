@@ -8,35 +8,37 @@ html
     body
         if user
             nav.navbar.navbar-expand-lg.navbar-light.bg-light.justify-content-between
-                img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
-                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-                    span.navbar-toggler-icon
-                #navbarSupportedContent.collapse.navbar-collapse
-                
-                    ul.navbar-nav.mr-auto
-                        li.nav-item
-                            a.nav-link(href='/') Home
-                        li.nav-item
-                            a.nav-link(href='/user') Profile
-                        li.nav-item
-                            a.nav-link(href='/todo') To do
-                    b Hi, 
-                        span= user.displayName
-                        span !&nbsp;
-                        span 
-                            img(src=user.avatar, width="32")
-                        span &nbsp;
-                    a.btn.btn-secondary(href='/auth/logout') Logout
+                .container
+                    img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                    #navbarSupportedContent.collapse.navbar-collapse
+                    
+                        ul.navbar-nav.mr-auto
+                            li.nav-item
+                                a.nav-link(href='/') Home
+                            li.nav-item
+                                a.nav-link(href='/user') Profile
+                            li.nav-item
+                                a.nav-link(href='/todo') To do
+                        b Hi, 
+                            span= user.displayName
+                            span !&nbsp;
+                            span 
+                                img(src=user.avatar, width="32")
+                            span &nbsp;
+                        a.btn.btn-secondary(href='/auth/logout') Logout
         else
             nav.navbar.navbar-expand-lg.navbar-light.bg-light.justify-content-between
-                img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
-                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-                    span.navbar-toggler-icon
-                #navbarSupportedContent.collapse.navbar-collapse
-                    ul.navbar-nav.mr-auto
-                        li.nav-item
-                            a.nav-link(href='/') Home
-                    a.btn.btn-primary(href='/auth/login') Login
+                .container
+                    img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
+                    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                    #navbarSupportedContent.collapse.navbar-collapse
+                        ul.navbar-nav.mr-auto
+                            li.nav-item
+                                a.nav-link(href='/') Home
+                        a.btn.btn-primary(href='/auth/login') Login
         .container
         block content
 
