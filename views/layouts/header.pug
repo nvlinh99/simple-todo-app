@@ -9,7 +9,7 @@ html
         if user
             nav.navbar.navbar-expand-lg.navbar-light.bg-light.justify-content-between
                 .container
-                    img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
+                    img(src="/images/logo.png", alt="", width="32")
                     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                         span.navbar-toggler-icon
                     #navbarSupportedContent.collapse.navbar-collapse
@@ -25,13 +25,13 @@ html
                             span= user.displayName
                             span !&nbsp;
                             span 
-                                img(src=user.avatar, width="32")
+                                img.rounded-circle(src=user.avatar, width="32")
                             span &nbsp;
                         a.btn.btn-secondary(href='/auth/logout') Logout
         else
             nav.navbar.navbar-expand-lg.navbar-light.bg-light.justify-content-between
                 .container
-                    img(src="https://i.imgur.com/VRL6erP.png", alt="", width="32")
+                    img(src="/images/logo.png", alt="", width="32")
                     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                         span.navbar-toggler-icon
                     #navbarSupportedContent.collapse.navbar-collapse
