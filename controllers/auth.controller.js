@@ -24,6 +24,8 @@ module.exports.postLogin = function(req, res) {
 
     if(controller.comparePassword(password, user.password)){
         req.session.userId = user.id;
+        req.session.task = ["BTCN04", "Study hard", "Graduate","Intern/Fresher"];
+        req.session.complete = ["BTCN01", "BTCN02", "BTCN03"];
         res.redirect('/user');
     }
     else {
@@ -39,5 +41,7 @@ module.exports.postLogin = function(req, res) {
 
 module.exports.logout = function(req, res) {
     delete req.session.userId;
+    delete req.session.task;
+    delete req.session.complete;
     res.redirect('/');
 }

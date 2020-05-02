@@ -1,23 +1,28 @@
 const controller = require('../controllers/service.controller');
 
-let task = [
-    "BTCN04",
-    "Study hard", 
-    "Graduate",
-    "Intern/Fresher"
-];
+// let task = [
+//     "BTCN04",
+//     "Study hard", 
+//     "Graduate",
+//     "Intern/Fresher"
+// ];
   
-let complete = ['BTCN01', 'BTCN02', 'BTCN03'];
+// let complete = ['BTCN01', 'BTCN02', 'BTCN03'];
+
+
 
 module.exports.postAddTask =  function(req, res) {
+    let task = req.session.task;
     let newTask = req.body.newTask;
     task.push(newTask);
     res.redirect("/todo");
 };
 
 module.exports.postRemoveTask = function(req, res) {
+    let complete = req.session.complete;
+    let task = req.session.task;
     let completeTask = req.body.check;
-    //check for the "typeof" the different completed task, then add into the complete task
+
     if (typeof completeTask === "string") {
         complete.push(completeTask);
         //check if the completed task already exits in the task when checked, then remove it
@@ -34,6 +39,8 @@ module.exports.postRemoveTask = function(req, res) {
 
 module.exports.index = function(req, res) {
     const userId = req.session.userId;
+    let task = req.session.task;
+    let complete = req.session.complete;
     const user = controller.findUserById(userId);
     if(!userId){
         res.redirect('/auth/login');
