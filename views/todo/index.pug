@@ -24,7 +24,7 @@ html
                             span= user.displayName
                             span !&nbsp;
                             span 
-                                img(src=user.avatar, width="32")
+                                img.rounded-circle(src=user.avatar, width="32")
                             span &nbsp;
                         a.btn.btn-secondary(href='/auth/logout') Logout
         else
